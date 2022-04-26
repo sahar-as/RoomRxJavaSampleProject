@@ -7,7 +7,7 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "movie_description",
-        primaryKeys = {"id", "movie_id"},
+        primaryKeys = {"movie_id"},
         indices = {@Index("movie_id")},
         foreignKeys = @ForeignKey(entity = Movie.class,
         parentColumns = "id",

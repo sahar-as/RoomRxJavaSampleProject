@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">RoomSampleProject</string>
+    <string name="movie_img">movie image</string>
+    <string name="txt_movieItem_movieName_string">Movie Name</string>
+    <string name="txt_movieItem_movieImdb_string">IMDb rate</string>
 </resources>
