@@ -6,23 +6,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 
 import java.util.List;
-import java.util.concurrent.Callable;
 
-import io.reactivex.Completable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import ir.saharapps.roomsampleproject.R;
 import ir.saharapps.roomsampleproject.db.ApplicationDataSource;
-import ir.saharapps.roomsampleproject.db.MovieDataProvider;
 import ir.saharapps.roomsampleproject.models.Movie;
+
+//design and developed by Sahar Asadian
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
-    //Room does not allow to operate database operation on main thread
 
+    //Room does not allow to operate database operation on main thread
     @SuppressLint("CheckResult")
     @Override
     protected void onResume() {
@@ -58,23 +53,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        Completable.fromCallable(new Callable<Void>() {
-            @Override
-            public Void call()  {
-                try {
-                    MovieDataProvider movieDataProvider = new MovieDataProvider();
-                    for(Movie movie : movieDataProvider.moviesList){
-                        Log.d("TAG", "call: 88888888888 " + movie.toString());
-                        mDataSource.insertMovie(movie);
-                    }
-                }catch (Exception e){
-                    Log.d("TAG", "call: 999999 " + e.getMessage());
-                }
-                return null;
-            }
-        })
-                .subscribeOn(Schedulers.newThread())
-                .subscribe();
+        //Run first time for adding data to the database
+//        Completable.fromCallable(new Callable<Void>() {
+//            @Override
+//            public Void call()  {
+//                try {
+//                    MovieDataProvider movieDataProvider = new MovieDataProvider();
+//                    for(Movie movie : movieDataProvider.moviesList){
+//                        mDataSource.insertMovie(movie);
+//                    }
+//                }catch (Exception e){
+//                    Log.d("TAG", "call: 999999 " + e.getMessage());
+//                }
+//                return null;
+//            }
+//        })
+//                .subscribeOn(Schedulers.newThread())
+//                .subscribe();
     }
 
     @Override

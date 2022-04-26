@@ -9,6 +9,9 @@ import androidx.room.RoomDatabase;
 import ir.saharapps.roomsampleproject.models.Movie;
 import ir.saharapps.roomsampleproject.models.MovieDescription;
 
+//design and developed by Sahar Asadian
+
+
 @Database(entities = {Movie.class, MovieDescription.class}, version = 1)
 public abstract class MovieDatabase extends RoomDatabase {
     public static final String DATABASE_NAME = "movie_info";

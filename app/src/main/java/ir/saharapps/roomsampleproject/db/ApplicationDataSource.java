@@ -9,6 +9,8 @@ import io.reactivex.Flowable;
 import ir.saharapps.roomsampleproject.models.Movie;
 import ir.saharapps.roomsampleproject.models.MovieDescription;
 
+//design and developed by Sahar Asadian
+
 public class ApplicationDataSource {
     private static final String TAG = "ApplicationDataSource";
 
@@ -35,10 +37,5 @@ public class ApplicationDataSource {
 
     public Flowable<List<Movie>> getAllMovieInfo(){
         return movieDao.getAllMovies();
-//        for (Movie movie : movies) {
-//            List<MovieDescription> descriptions = movieDescriptionDao.getMovieDescriptions(movie.getId());
-//            movie.setDescription(descriptions);
-//        }
-//        return movies;
     }
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import io.reactivex.Flowable;
 import ir.saharapps.roomsampleproject.models.Movie;
 
+//design and developed by Sahar Asadian
+
 @Dao
 public interface MovieDao {
 

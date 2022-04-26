@@ -1,7 +1,5 @@
 package ir.saharapps.roomsampleproject.db;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,15 +7,14 @@ import ir.saharapps.roomsampleproject.R;
 import ir.saharapps.roomsampleproject.models.Movie;
 import ir.saharapps.roomsampleproject.models.MovieDescription;
 
+//design and developed by Sahar Asadian
+
 public class MovieDataProvider {
     public List<Movie> moviesList =new ArrayList<>();
     private List<MovieDescription> movieDescriptionList = new ArrayList<>();
 
     public MovieDataProvider() {
         addingToList();
-        for(Movie movie :moviesList){
-            Log.d("TAG", "MovieDataProvider: 777777777777 " + movie.toString());
-        }
     }
 
     public void addingToList(){
