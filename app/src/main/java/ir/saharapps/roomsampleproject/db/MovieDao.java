@@ -7,6 +7,7 @@ import androidx.room.Query;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
 import ir.saharapps.roomsampleproject.models.Movie;
 
 @Dao
@@ -16,5 +17,5 @@ public interface MovieDao {
     long insertMovie(Movie movie);
 
     @Query("SELECT * FROM movie")
-    List<Movie> getAllMovies();
+    Flowable<List<Movie>> getAllMovies();
 }

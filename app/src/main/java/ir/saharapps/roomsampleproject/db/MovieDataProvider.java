@@ -1,5 +1,7 @@
 package ir.saharapps.roomsampleproject.db;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,9 @@ public class MovieDataProvider {
 
     public MovieDataProvider() {
         addingToList();
+        for(Movie movie :moviesList){
+            Log.d("TAG", "MovieDataProvider: 777777777777 " + movie.toString());
+        }
     }
 
     public void addingToList(){

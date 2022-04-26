@@ -5,6 +5,7 @@ import android.util.Log;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
 import ir.saharapps.roomsampleproject.models.Movie;
 import ir.saharapps.roomsampleproject.models.MovieDescription;
 
@@ -30,5 +31,14 @@ public class ApplicationDataSource {
             movieDescriptionDao.insertDescription(descriptions);
         }
         Log.d(TAG, "insertMovie: row id is: " + rowId);
+    }
+
+    public Flowable<List<Movie>> getAllMovieInfo(){
+        return movieDao.getAllMovies();
+//        for (Movie movie : movies) {
+//            List<MovieDescription> descriptions = movieDescriptionDao.getMovieDescriptions(movie.getId());
+//            movie.setDescription(descriptions);
+//        }
+//        return movies;
     }
 }
